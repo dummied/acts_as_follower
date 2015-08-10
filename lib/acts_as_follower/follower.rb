@@ -15,6 +15,10 @@ module ActsAsFollower #:nodoc:
 
     module InstanceMethods
 
+      def hi_there
+        "Hey buddy"
+      end
+
       # Returns true if this instance is following the object passed as an argument.
       def following?(followable)
         0 < Follow.unblocked.for_follower(self).for_followable(followable).count
